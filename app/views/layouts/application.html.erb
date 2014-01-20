@@ -9,5 +9,6 @@
 		<%=render "layouts/navbar"%>
 		<%= yield %>
 		<%=render "layouts/footer"%>
+		<%= debug(params) if Rails.env.developement? %>
 	</body>
 </html>
