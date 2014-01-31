@@ -23,6 +23,7 @@ end
 group :development do
   gem "rspec-rails", "~> 2.4"
   gem 'annotate', ">=2.6.0"
+  gem "simple_form", "~> 2.0.0.rc"
 end
 
 group :test do
@@ -32,6 +33,7 @@ group :test do
 end
 
 gem 'jquery-rails'
+gem "simple_form", "~> 2.0.0.rc"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

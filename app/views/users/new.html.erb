@@ -1,2 +1,22 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>"dxplorer" | <%= @title %></title>
+	</head>
+	<body>
+		<div class="container">
+
+	      <!-- Main hero unit for a primary marketing message or call to action -->
+	      <div class="hero-unit">
+	        <h1>dxplorer</h1>
+	        <p>BI Made Easy</p>
+	      	<%= simple_form_for @user do |f| %>
+			  <%= f.input :name, label: 'Your name please' %>
+			  <%= f.input :email, placeholder: 'user@domain.com' %>
+			  <%= f.input :password, label: 'Your password please' %>
+			  <%= f.input :password_confirmation %>
+			  <%= f.submit "sign up"%>
+			<% end %>
+	      </div>
+	</body>
+</html>
