@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>"dxplorer" | <%= @title %></title>
+	</head>
+	<body>
+		<div class="container">
+
+	      <!-- Main hero unit for a primary marketing message or call to action -->
+	      <div class="hero-unit">
+	        <h1>dxplorer</h1>
+	        <p>BI Made Easy</p>
+		  </div>
+			<%= form_for(:session, :url => sessions_path) do |f| %>
+			<div class="field">
+			    <%= f.label :email %><br />
+			    <%= f.text_field :email %>
+			 </div>
+			  <div class="field">
+			    <%= f.label :password %><br />
+			    <%= f.password_field :password %>
+			  </div>
+			<div class="actions">
+			    <%= f.submit "Sign in" %>
+			  </div>
+			<% end %>
+			<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+		</body>
+</html>
