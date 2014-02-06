@@ -12,11 +12,11 @@
               <li><a <%= link_to "Home", root_path %></a></li>
               <li><a <%= link_to "About", about_path %></a></li>
               <li><a <%= link_to "Contact", contact_path %></a></li>
-			  <% if signed_in? %>
-			        <li><a<%= link_to "Profile", current_user %></a></li>
-			        <li><a<%= link_to "Users", users_path %></a></li>
-			        <li><a<%= link_to "Settings", edit_user_path(current_user) %></li>
-			  <% end %>
+	      <% if signed_in? %>
+	      <li><a <%= link_to "Profile", current_user %></a></li>
+	      <li><a <%= link_to "Users", users_path %></a></li>
+	      <li><a <%= link_to "Settings", edit_user_path(current_user) %></a></li>
+	      <% end %>
             </ul>
 			  <% if signed_in? %>
 			  	<%= link_to "Sign out", signout_path, :class => "btn" %>
