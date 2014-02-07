@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>"dxplorer" | <%= @title %></title>
+	</head>
+	<body>
+		<div class="container">
+
+	      <!-- Main hero unit for a primary marketing message or call to action -->
+	      <div class="hero-unit">
+	        <h1>dxplorer</h1>
+	        <p>BI Made Easy</p>
+	      	<h1>All users</h1>
+
+                <%= will_paginate %>
+
+                <ul>
+			<% @users.each do |user| %>
+			<li>
+			<%= link_to user.name, user %>
+			</li>
+			<% end %>
+		</ul>
+
+                <%= will_paginate %>
+	      </div>
+	</body>
+</html>
