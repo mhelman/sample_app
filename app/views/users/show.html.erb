@@ -1,2 +1,24 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>"dxplorer" | <%= @title %></title>
+	</head>
+	<body>
+		<div class="container">
+
+	      <!-- Main hero unit for a primary marketing message or call to action -->
+	      <div class="hero-unit">
+	        <h1>dxplorer</h1>
+	        <p>BI Made Easy</p>
+	      	<div class="span8">
+                <% if @user.campaigns.any? %>
+                <h3>Campaigns (<%= @user.campaigns.count %>)</h3>
+                <ol class="microposts">
+                  <%= render @campaigns %>
+                </ol>
+                <%= will_paginate @campaigns %>
+                <% end %>
+  </div>
+	      </div>
+	</body>
+</html>

@@ -2,6 +2,7 @@ SampleApp::Application.routes.draw do
 
   resources :users
   resources :sessions,      :only => [:new, :create, :destroy]
+  resources :campaigns, only: [:create, :destroy]
   
     root  :to => 'pages#home'
     match '/',    to: 'pages#home'
