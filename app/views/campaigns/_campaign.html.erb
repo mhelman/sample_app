@@ -1,0 +1,23 @@
+<tr>
+  <td class="campaign">
+    <span class="name"><%= campaign.name %></span>
+    <span class="targeting string"><%= campaign.targeting_string %></span>
+    <span class="timestamp">
+      Created <%= time_ago_in_words(campaign.created_at) %> ago.
+    </span>
+    <span class="StartDate"><%= campaign.cstartdate %></span>
+    <span class="EndDate"><%= campaign.cenddate %></span>
+    <span class="Budget"><%= campaign.campaign_budget %></span>
+    <span class="Impressions"><%= campaign.impressions %></span>
+    <span class="Clicks"><%= campaign.clicks %></span>
+  </td>
+  <% user = campaign.user rescue User.find(campaign.user_id) %>
+  <% if current_user?(user) %>
+    <td>
+      <%= link_to "delete", campaign, :method => :delete,
+                                       :confirm => "You sure?",
+                                       :title => campaign.name %>
+    <br>
+    </td>
+  <% end %>
+</tr>

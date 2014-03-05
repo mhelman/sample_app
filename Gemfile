@@ -5,6 +5,7 @@ gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate', '~> 3.0'
 gem 'sqlite3' , "~> 1.3.5"
 gem 'simple_form'
+gem 'lazy_high_charts'
  
 group :development do
   gem 'rspec-rails'

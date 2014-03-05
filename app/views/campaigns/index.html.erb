@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>"contexto" | <%= @title %></title>
+	</head>
+	<body>
+		<div class="container">
+
+	      <!-- Main hero unit for a primary marketing message or call to action -->
+	      <div class="hero-unit">
+	        <h1>contexto</h1>
+	        <p>Searchify your App</p>
+	      	<h1>All campaigns</h1>
+                <%= will_paginate %>
+		<table>
+		<tr>
+			<th>Campaign Name</th>
+			<th>Campaign Targeting</th>
+			<th>Created</th>
+			<th>Start Date</th>
+			<th>End Date</th>
+			<th>Budget</th>
+			<th>Impressions</th>
+			<th>Clicks</th>
+			<th></th>
+		</tr>
+		<% current_user.campaigns.each do |campaign| %>
+		<tr>
+		<td><%= campaign.name %></td>
+		<td><%= campaign.targeting_string %></td>
+		<td><%= time_ago_in_words(campaign.created_at) %> ago.</td>
+		<td><%= campaign.cstartdate %></td>
+		<td><%= campaign.cenddate %></td>
+		<td><%= campaign.campaign_budget %></td>
+		<td><%= campaign.impressions %></td>
+		<td><%=campaign.clicks%></td>
+		<td>
+			<%= link_to "delete", campaign, :method => :delete,
+                        :confirm => "You sure?",
+                        :title => campaign.name %>
+		</td>
+		
+		</tr>
+<% end %>
+</table>
+                <%= will_paginate %>
+	      </div>
+	</body>
+</html>

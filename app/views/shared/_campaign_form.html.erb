@@ -1,7 +1,7 @@
-<%= form_for(@campaign) do |f| %>
+<%= simple_form_for(@campaign) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
-    <%= f.text_area :name %>
+    <%= f.input :name, label: 'Campaign name please' %>
   </div>
   <div class="actions">
     <%= f.submit "Submit" %>

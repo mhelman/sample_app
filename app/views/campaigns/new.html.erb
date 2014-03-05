@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>"contexto" | <%= @title %></title>
+	</head>
+	<body>
+		<div class="container">
+
+	      <!-- Main hero unit for a primary marketing message or call to action -->
+	      <div class="hero-unit">
+	        <h1>contexto</h1>
+	        <p>Searchify your App</p>
+	      	<%= simple_form_for @campaign do |f| %>
+			  <%= f.input :name, label: 'Your campaign name please' %>
+			  <%= f.input :cstartdate, label: 'Start Date' %> 
+			  <%= f.input :cenddate, label: 'End Date' %>
+			  <%= f.input :campaign_budget, label: 'Campaign Budget' %>
+			  <%= f.input :CPM, label: 'CPM' %>
+			  <%= f.input :targeting_string, label: 'Targeting Parameters' %>
+			  <%= f.submit "Create"%>
+			<% end %>
+	      </div>
+	</body>
+</html>
