@@ -6,6 +6,7 @@ gem 'will_paginate', '~> 3.0'
 gem 'sqlite3' , "~> 1.3.5"
 gem 'simple_form'
 gem 'lazy_high_charts'
+gem 'jquery-rails'
  
 group :development do
   gem 'rspec-rails'

@@ -4,8 +4,10 @@
 		<title>"contexto" | <%= @title %></title>
 		<%= csrf_meta_tag %>
 		<%= stylesheet_link_tag "bootstrap" %>
-		<%= javascript_include_tag "jquery-1.4.2.min", "rails"%>
-
+		<%= javascript_include_tag "jquery", "rails"%>
+		<%= javascript_include_tag 'highcharts' %>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> 
+		
 	</head>
 	<body>
 		<%=render "layouts/navbar"%>

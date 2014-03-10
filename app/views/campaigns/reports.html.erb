@@ -10,9 +10,28 @@
 	      <div class="hero-unit">
 	        <h1>contexto</h1>
 	        <p>Searchify your App</p>
-	      	<div class="span8">
-                <%= high_chart("my_combine_div", @chart) %>
-                </div>
-	      </div>
+              </div>
+		<%= high_chart("my_id4", @chart) %>
+		<%= high_chart("my_id77", @h) %>
+                <script type="text/javascript">
+                $( document ).ready(function() {
+                  new Highcharts.Chart({
+                  chart: { renderTo: 'orders_chart' },
+                  title: { text: 'Orders by Day' },
+                  xAxis: { type: 'datetime' },
+                  yAxis: {
+                  title: { text: 'Dollars' }
+                  },
+                  series: [{
+                  pointInterval: <%= 1.day * 1000 %>,
+                  pointStart: <%= 3.weeks.ago.at_midnight.to_i * 1000 %>,
+                  data: [1, 2, 5, 7, 3]
+                }]
+              });
+            });
+          </script>
+                <div id="orders_chart" style="width: 560px; height: 300px;"></div>
+              <div id = "my_id77" style="width: 560px; height: 300px; "></div>
+	      <div id = "my_id4" style="width: 560px; height: 300px; "></div>
 	</body>
 </html>

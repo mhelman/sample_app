@@ -3,6 +3,13 @@ SampleApp::Application.routes.draw do
   resources :users
   resources :sessions,      :only => [:new, :create, :destroy]
   resources :campaigns
+  resources :charts do
+    collection do
+      get 'basic_line'
+      get 'line_ajax'
+      get 'line_labels'
+    end
+  end
   
     root  :to => 'pages#home'
     match '/',    to: 'pages#home'
@@ -15,6 +22,7 @@ SampleApp::Application.routes.draw do
     match '/campaigns', :to => 'campaigns#index'
     match '/create', :to => 'campaigns#new'
      match '/reports', :to => 'campaigns#reports'
+     
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
