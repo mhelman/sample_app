@@ -30,8 +30,53 @@
               });
             });
           </script>
-                <div id="orders_chart" style="width: 560px; height: 300px;"></div>
-              <div id = "my_id77" style="width: 560px; height: 300px; "></div>
-	      <div id = "my_id4" style="width: 560px; height: 300px; "></div>
+	<div id="orders_chart" style="width: 560px; height: 300px;"></div>
+        <div id = "my_id77" style="width: 560px; height: 300px; "></div>
+	<div id = "my_id4" style="width: 560px; height: 300px; "></div>
+	<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+	<script>
+        $(function () {
+            var chart;
+            $(document).ready(function () {
+                chart = new Highcharts.Chart({
+                    chart:{
+                        renderTo:'container',
+                        type:'column'
+                    },
+                    title: { text: 'Campaign Budget' },
+                  xAxis: { type: 'datetime' },
+                  yAxis: {
+                  title: { text: 'Campaign budget' }
+                  },
+                    legend:{
+                        layout:'vertical',
+                        backgroundColor:'#FFFFFF',
+                        align:'left',
+                        verticalAlign:'top',
+                        x:100,
+                        y:70,
+                        floating:true,
+                        shadow:true
+                    },
+                    plotOptions:{
+                        column:{
+                            pointPadding:0.4,
+                            borderWidth:0
+                        }
+                    },
+                    series:[
+                        <% current_user.campaigns.each do |campaign| %>
+                        {
+                            name:'<%= campaign.name %>',
+                            data:[<%= campaign.campaign_budget%>]
+                        },
+                <% end %>
+                        
+                    ]
+                });
+		});
+        });
+	</script>
 	</body>
 </html>
