@@ -129,6 +129,7 @@ DEPENDENCIES
   faker (= 0.3.1)
   gravatar_image_tag (= 1.0.0.pre2)
   jquery-rails
+  json (~> 1.8.1)
   lazy_high_charts
   rails (= 3.2.12)
   rspec-rails

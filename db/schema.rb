@@ -11,10 +11,45 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140304160545) do
+ActiveRecord::Schema.define(:version => 20140503143048) do
+
+  create_table "advertising_keywords", :force => true do |t|
+    t.string   "keyword"
+    t.integer  "score"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "advertisingkeywords", :force => true do |t|
+    t.string   "keyword"
+    t.integer  "score"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "advkeywords", :force => true do |t|
+    t.string   "keyword"
+    t.integer  "score"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 # Could not dump table "campaigns" because of following StandardError
 #   Unknown type 'fixnum' for column 'impressions'
+
+  create_table "sensitive_keywords", :force => true do |t|
+    t.string   "keyword"
+    t.integer  "score"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "sensitivekeywords", :force => true do |t|
+    t.string   "keyword"
+    t.integer  "score"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

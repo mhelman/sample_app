@@ -7,6 +7,7 @@ gem 'sqlite3' , "~> 1.3.5"
 gem 'simple_form'
 gem 'lazy_high_charts'
 gem 'jquery-rails'
+gem 'json', '~> 1.8.1'
  
 group :development do
   gem 'rspec-rails'

@@ -1,5 +1,13 @@
 SampleApp::Application.routes.draw do
 
+  get "advertisingkeywords/new"
+
+  get "advkeywords/new"
+
+  get "advkeywords/news"
+
+  get "advertisingkeywords/news"
+
   resources :users
   resources :sessions,      :only => [:new, :create, :destroy]
   resources :campaigns
@@ -20,7 +28,13 @@ SampleApp::Application.routes.draw do
     match '/signin',  :to => 'sessions#new'
     match '/signout', :to => 'sessions#destroy'
     match '/campaigns', :to => 'campaigns#index'
+    match '/advertisingkeywords/:id', :to => 'advertisingkeywords#show', :as => :advertisingkeyword
+    match '/advertisingkeywords', :to => 'advertisingkeywords#index'
     match '/create', :to => 'campaigns#new'
+    match '/createkeywords', :to => 'advertisingkeywords#new'
+    match '/advkeywordstream', :to => 'advertisingkeywords#advkeywordsStream'
+    match '/delete', :to => 'campaigns#destroy'
+    match '/deletekeywords', :to => 'advertisingkeywords#destroy'
      match '/reports', :to => 'campaigns#reports'
      
   # The priority is based upon order of creation:
