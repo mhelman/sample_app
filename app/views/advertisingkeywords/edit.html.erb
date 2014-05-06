@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>"contexto" | <%= @title %></title>
+	</head>
+	<body>
+		<div class="container">
+
+	      <!-- Main hero unit for a primary marketing message or call to action -->
+	      <div class="hero-unit">
+	        <h1>contexto</h1>
+	        <p>Searchify your App</p>
+	      	<%= simple_form_for @user do |f| %>
+			  <%= f.input :keyword, label: 'Your Keyword please' %>
+			  <%= f.input :score, label: 'Score' %>
+			  <%= f.submit "Save"%>
+			<% end %>
+	      </div>
+	</body>
+</html>

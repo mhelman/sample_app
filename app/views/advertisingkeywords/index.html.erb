@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>"contexto" | <%= @title %></title>
+	</head>
+	<body>
+		<div class="container">
+
+	      <!-- Main hero unit for a primary marketing message or call to action -->
+	      <div class="hero-unit">
+	        <h1>contexto</h1>
+	        <p>Searchify your App</p>
+	      	<h1>All advertising keywords</h1>
+
+                <%= will_paginate %>
+
+                <ul>
+			<% @advertisingkeywords.each do |advertisingkeyword| %>
+			<%= render advertisingkeyword %>
+			<% end %>
+		</ul>
+
+                <%= will_paginate %>
+	      </div>
+	</body>
+</html>

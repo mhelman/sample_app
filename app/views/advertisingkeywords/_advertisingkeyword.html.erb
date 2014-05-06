@@ -1,0 +1,15 @@
+<tr>
+  <td class="advertisingkeyword">
+    <span class="keyword"><%= advertisingkeyword.keyword %></span>
+    <span class="score"><%= advertisingkeyword.score %></span>
+    <span class="timestamp">
+      Created <%= time_ago_in_words(advertisingkeyword.created_at) %> ago.
+    </span>
+  </td>
+    <td>
+      <%= link_to "deletekeywords", advertisingkeyword, :method => :delete,
+                                       :confirm => "You sure?",
+                                       :title => advertisingkeyword.keyword %>
+    <br>
+    </td>
+</tr>
